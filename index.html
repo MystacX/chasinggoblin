@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/ico" href="assets/images/goblin.ico" />
+    <title>Chasing Goblin</title>
+    <style>
+        @font-face {
+            font-family: 'Playfair Display';
+            font-style: normal;
+            font-weight: 900;
+            font-display: swap;
+            src: url('https://img1.wsimg.com/gfonts/s/playfairdisplay/v37/nuFiD-vYSZviVYUb_rj3ij__anPXDTjYgFE_.woff2') format('woff2');
+            unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0d0d0d;
+            color: #f2f2f2;
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInText {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(13, 13, 13, 0.9);
+            display: flex;
+            justify-content: center;
+            padding: 0.75rem 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #f2f2f2;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ccc;
+        }
+
+        header {
+            margin-top: 3.5rem;
+            text-align: center;
+            padding: 1.5rem 0;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: bold;
+            letter-spacing: 0.1rem;
+            font-size: 2rem;
+            text-transform: uppercase;
+        }
+
+        .hero {
+            height: calc(100vh - 7rem);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            text-align: center;
+            padding: 0 1rem;
+            background-color: #0d0d0d;
+            backdrop-filter: blur(4px);
+            line-height: 1.3;
+            max-width: 1000px;
+            margin: auto;
+            animation: fadeInText 1.2s ease-out both;
+        }
+
+        .hero img.hero-logo {
+            width: 180px;
+            height: auto;
+            margin: 2rem 0;
+            filter: drop-shadow(0 0 10px rgba(0, 255, 0, 0.3));
+        }
+
+        section {
+            background-color: #0d0d0d;
+            padding: 4rem 2rem;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+
+        #about {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        #about h2 {
+            font-size: 2.5rem;
+        }
+
+        #about p.subtitle {
+            font-size: 1.5rem;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 2rem auto;
+        }
+
+        #contact {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        h2 {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 0.25rem;
+        }
+
+        p.subtitle {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        input,
+        textarea {
+            padding: 0.8rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            background-color: #1a1a1a;
+            color: #f2f2f2;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        input:hover,
+        textarea:hover {
+            background-color: #222;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+        }
+
+        input[type="submit"] {
+            background-color: #f2f2f2;
+            color: #0d0d0d;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            box-shadow: 0 3px 10px rgba(255, 255, 255, 0.1);
+        }
+
+        input[type="submit"]:hover {
+            background-color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#about">About</a>
+    </nav>
+
+    <header>
+        CHASING GOBLIN
+    </header>
+
+    <div class="hero">
+        <div>Chasing the dopamine through gaming</div>
+        <img src="assets/images/logo.png" alt="Goblin Logo" class="hero-logo" />
+    </div>
+
+    <section id="about">
+        <h2>About</h2>
+        <p class="subtitle">We are driven by the thrill of the game, chasing that next hit of dopamine. Chasing Goblin
+            is a celebration of gaming culture, quick reflexes, and the stories we write through play.</p>
+    </section>
+
+</body>
+
+</html>
